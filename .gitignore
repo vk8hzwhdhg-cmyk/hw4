@@ -1,0 +1,24 @@
+# Data: never commit the databases or production images (data/README.md explains setup)
+*.db
+*.db-journal
+*.sqlite
+data/products/
+# Hero banner from yalebulldogblue.com (production image): not committed
+frontend/public/hero/yale-bulldog-blue-banner.*
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Vite
+node_modules/
+dist/
+
+# OS
+.DS_Store

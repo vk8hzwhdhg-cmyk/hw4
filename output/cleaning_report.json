@@ -1,0 +1,1120 @@
+{
+  "source": "data/campus_customs.db",
+  "source_sha256_unchanged": "3bdae67cc1bdc00ec1405149509b099254dd012d7ecd3ed7abd5272a8964fc68",
+  "output": "data/campus_customs_clean.db",
+  "schema_additions": [
+    "catalogue.category",
+    "catalogue.color_families",
+    "view product_stock",
+    "idx_inventory_product",
+    "idx_chat_user",
+    "idx_catalogue_category",
+    "table sessions"
+  ],
+  "not_changed": [
+    "product_id and image_file_path (renaming would break image links)",
+    "users table (name already matches first + last; Test User kept for development)",
+    "inventory quantities"
+  ],
+  "change_counts": {
+    "4 garment_type casing": 6,
+    "3/6/7 display name": 49,
+    "5 color synonyms": 62,
+    "1 placeholder row": 12,
+    "2 mislabeled type": 1,
+    "12 empty list": 6
+  },
+  "changes": [
+    {
+      "table": "catalogue",
+      "key": "2025-yale-vs-harvard-t-shirt",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "2025-yale-vs-harvard-t-shirt",
+      "field": "name",
+      "old": "2025 Yale Vs Harvard T Shirt",
+      "new": "2025 Yale vs. Harvard T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "2025-yale-vs-harvard-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"white\", \"red\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"white\", \"red\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "basic-hoodie-big-yale",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-1-4-zip",
+      "field": "name",
+      "old": "Benjamin Franklin 1 4 Zip",
+      "new": "Benjamin Franklin 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-t-shirt",
+      "field": "garment_type",
+      "old": "t-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-t-shirt",
+      "field": "description",
+      "old": "Campus Customs product photo (benjamin franklin t shirt). Vision blocked; filename-based stub.",
+      "new": "Heather gray short-sleeve crewneck T-shirt with a large Benjamin Franklin College shield (blue and red quarters with white lightning bolts and fleurs-de-lis) centered on the chest above black \"BENJAMIN FRANKLIN COLLEGE\" lettering.",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-t-shirt",
+      "field": "colors",
+      "old": "[]",
+      "new": "[\"heather gray\", \"red\", \"blue\", \"white\", \"black\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-t-shirt",
+      "field": "search_tags",
+      "old": "[\"benjamin\", \"franklin\", \"t\", \"shirt\"]",
+      "new": "[\"Yale\", \"Benjamin Franklin College\", \"Franklin\", \"residential college\", \"college crest\", \"shield\", \"gray T-shirt\", \"short sleeve\", \"Campus Customs\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "benjamin-franklin-t-shirt",
+      "field": "name",
+      "old": "Benjamin Franklin T Shirt",
+      "new": "Benjamin Franklin T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "berkeley-1-4-zip",
+      "field": "name",
+      "old": "Berkeley 1 4 Zip",
+      "new": "Berkeley 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "berkeley-sweater-fleece-jacket",
+      "field": "garment_type",
+      "old": "jacket",
+      "new": "full-zip fleece jacket",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "berkeley-sweater-fleece-jacket",
+      "field": "description",
+      "old": "Campus Customs product photo (berkeley sweater fleece jacket). Vision blocked; filename-based stub.",
+      "new": "Light heather gray full-zip sweater fleece jacket with a stand collar, dark gray zipper and pocket trim, zippered hand pockets, and a small red Berkeley College shield with \"BERKELEY\" on the left chest.",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "berkeley-sweater-fleece-jacket",
+      "field": "colors",
+      "old": "[]",
+      "new": "[\"heather gray\", \"charcoal gray\", \"red\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "berkeley-sweater-fleece-jacket",
+      "field": "search_tags",
+      "old": "[\"berkeley\", \"sweater\", \"fleece\", \"jacket\"]",
+      "new": "[\"Yale\", \"Berkeley College\", \"Berkeley\", \"residential college\", \"sweater fleece\", \"full zip\", \"fleece jacket\", \"gray jacket\", \"college crest\", \"Campus Customs\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "big-yale-tri-blend-t-shirt",
+      "field": "name",
+      "old": "Big Yale Tri Blend T Shirt",
+      "new": "Big Yale Tri-Blend T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "boola-boola-t-shirt",
+      "field": "name",
+      "old": "Boola Boola T Shirt",
+      "new": "Boola Boola T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "branford-1-4-zip",
+      "field": "name",
+      "old": "Branford 1 4 Zip",
+      "new": "Branford 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "brooks-brothers-bomber-jacket-yale",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "brooks-brothers-double-knit-full-zip-hoodie-yale",
+      "field": "name",
+      "old": "Brooks Brothers Double Knit Full Zip Hoodie Yale",
+      "new": "Brooks Brothers Double-Knit Full-Zip Hoodie Yale",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "champion-full-zip-hood",
+      "field": "name",
+      "old": "Champion Full Zip Hood",
+      "new": "Champion Full-Zip Hood",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "champion-full-zip-hood",
+      "field": "colors",
+      "old": "[\"charcoal gray\", \"white\", \"navy blue\"]",
+      "new": "[\"charcoal gray\", \"white\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "champion-mens-triumph-raglan-crew",
+      "field": "name",
+      "old": "Champion Mens Triumph Raglan Crew",
+      "new": "Champion Men's Triumph Raglan Crew",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "champion-reverse-weave-crewneck",
+      "field": "colors",
+      "old": "[\"light gray\", \"navy blue\"]",
+      "new": "[\"light gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "champion-reverse-weave-hoodie-1",
+      "field": "name",
+      "old": "Champion Reverse Weave Hoodie 1",
+      "new": "Champion Reverse Weave Hoodie",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "crew-left-chest-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "district-tri-blend-t-shirt-vintage-shield",
+      "field": "name",
+      "old": "District Tri Blend T Shirt Vintage Shield",
+      "new": "District Tri-Blend T-Shirt Vintage Shield",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "district-vit-crewneck-vintage-standing-bulldog",
+      "field": "colors",
+      "old": "[\"heather charcoal gray\", \"navy blue\", \"white\"]",
+      "new": "[\"heather charcoal gray\", \"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "diving-left-chest-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "divinity-school-fleece-sweater",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "dry-zone-long-sleeve",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "fencing-left-chest-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "football-left-chest-t-shirt",
+      "field": "name",
+      "old": "Football Left Chest T Shirt",
+      "new": "Football Left Chest T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "grace-hopper-college-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "grace-hopper-logo-t-shirt",
+      "field": "name",
+      "old": "Grace Hopper Logo T Shirt",
+      "new": "Grace Hopper Logo T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "hype-and-vice-yale-university-offside-crewneck",
+      "field": "name",
+      "old": "Hype And Vice Yale University Offside Crewneck",
+      "new": "Hype & Vice Yale University Offside Crewneck",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "hype-and-vice-yale-university-premium-crewneck",
+      "field": "name",
+      "old": "Hype And Vice Yale University Premium Crewneck",
+      "new": "Hype & Vice Yale University Premium Crewneck",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "hype-and-vice-yale-university-premium-crewneck",
+      "field": "colors",
+      "old": "[\"white\", \"navy blue\", \"gray\", \"green\", \"gold\"]",
+      "new": "[\"white\", \"navy\", \"gray\", \"green\", \"gold\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "ice-hockey-left-chest-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "lacrosse-left-chest-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "morse-1-4-zip",
+      "field": "name",
+      "old": "Morse 1 4 Zip",
+      "new": "Morse 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "morse-logo-t-shirt",
+      "field": "name",
+      "old": "Morse Logo T Shirt",
+      "new": "Morse Logo T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "pierson-logo-t-shirt",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "pierson-logo-t-shirt",
+      "field": "name",
+      "old": "Pierson Logo T Shirt",
+      "new": "Pierson Logo T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "poly-twill-crewneck-arched-yale",
+      "field": "colors",
+      "old": "[\"cream\", \"navy blue\"]",
+      "new": "[\"cream\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "sailing-left-chest-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "saybrook-college-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\", \"yellow\", \"blue\"]",
+      "new": "[\"navy\", \"yellow\", \"blue\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "saybrook-logo-t-shirt",
+      "field": "name",
+      "old": "Saybrook Logo T Shirt",
+      "new": "Saybrook Logo T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-architecture-crewneck",
+      "field": "name",
+      "old": "School Of Architecture Crewneck",
+      "new": "School of Architecture 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-architecture-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"light blue\"]",
+      "new": "[\"navy\", \"white\", \"light blue\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-architecture-fleece-sweater",
+      "field": "name",
+      "old": "School Of Architecture Fleece Sweater",
+      "new": "School of Architecture Fleece Sweater",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-architecture-fleece-sweater",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-art-1-4-zip",
+      "field": "name",
+      "old": "School Of Art 1 4 Zip",
+      "new": "School of Art 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-art-fleece-sweater",
+      "field": "name",
+      "old": "School Of Art Fleece Sweater",
+      "new": "School of Art Fleece Sweater",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-art-fleece-sweater",
+      "field": "colors",
+      "old": "[\"navy blue\"]",
+      "new": "[\"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-engineering-1-4-zip",
+      "field": "name",
+      "old": "School Of Engineering 1 4 Zip",
+      "new": "School of Engineering 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-engineering-1-4-zip",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"gold\", \"light blue\"]",
+      "new": "[\"navy\", \"white\", \"gold\", \"light blue\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-management-crest-t-shirt",
+      "field": "name",
+      "old": "School Of Management Crest T Shirt",
+      "new": "School of Management Crest T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-medicine-1-4-zip",
+      "field": "name",
+      "old": "School Of Medicine 1 4 Zip",
+      "new": "School of Medicine 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-medicine-1-4-zip",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"red\", \"green\"]",
+      "new": "[\"navy\", \"white\", \"red\", \"green\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-music-fleece-sweater",
+      "field": "name",
+      "old": "School Of Music Fleece Sweater",
+      "new": "School of Music Fleece Sweater",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-music-fleece-sweater",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"red\", \"yellow\"]",
+      "new": "[\"navy\", \"white\", \"red\", \"yellow\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-nursing-crest-t-shirt",
+      "field": "name",
+      "old": "School Of Nursing Crest T Shirt",
+      "new": "School of Nursing Crest T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-nursing-crest-t-shirt",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"black\", \"royal blue\", \"gold\"]",
+      "new": "[\"navy\", \"white\", \"black\", \"royal blue\", \"gold\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-public-health-1-4-zip",
+      "field": "name",
+      "old": "School Of Public Health 1 4 Zip",
+      "new": "School of Public Health 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "school-of-public-health-1-4-zip",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\", \"red\", \"blue\", \"gold\"]",
+      "new": "[\"navy\", \"white\", \"red\", \"blue\", \"gold\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "soccer-left-chest-crewneck",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "squash-left-chest-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "squash-left-chest-tennis",
+      "field": "name",
+      "old": "Squash Left Chest Tennis",
+      "new": "Squash Left Chest Crewneck",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "squash-left-chest-tennis",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "t-felt-y-heavyweight",
+      "field": "name",
+      "old": "T Felt Y Heavyweight",
+      "new": "Felt Y Heavyweight T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "timothy-dwight-college-crewneck",
+      "field": "garment_type",
+      "old": "crewneck",
+      "new": "crewneck sweatshirt",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "timothy-dwight-college-crewneck",
+      "field": "description",
+      "old": "Campus Customs product photo (timothy dwight college crewneck). Vision blocked; filename-based stub.",
+      "new": "Heather gray long-sleeve crewneck sweatshirt with ribbed collar, cuffs, and waistband, featuring a small red and white Timothy Dwight College shield above \"TIMOTHY DWIGHT\" on the left chest.",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "timothy-dwight-college-crewneck",
+      "field": "colors",
+      "old": "[]",
+      "new": "[\"heather gray\", \"red\", \"white\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "timothy-dwight-college-crewneck",
+      "field": "search_tags",
+      "old": "[\"timothy\", \"dwight\", \"college\", \"crewneck\"]",
+      "new": "[\"Yale\", \"Timothy Dwight College\", \"TD\", \"residential college\", \"college crest\", \"crewneck\", \"sweatshirt\", \"gray sweatshirt\", \"left chest logo\", \"Campus Customs\"]",
+      "issue": "1 placeholder row"
+    },
+    {
+      "table": "catalogue",
+      "key": "track-field-left-chest-t-shirt",
+      "field": "name",
+      "old": "Track Field Left Chest T Shirt",
+      "new": "Track & Field Left Chest T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "track-field-left-chest-t-shirt",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-baseball-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Baseball T Shirt",
+      "new": "Tri-Blend Sports Baseball T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-baseball-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-basketball-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Basketball T Shirt",
+      "new": "Tri-Blend Sports Basketball T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-basketball-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-football-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Football T Shirt",
+      "new": "Tri-Blend Sports Football T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-football-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-hockey-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Hockey T Shirt",
+      "new": "Tri-Blend Sports Hockey T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-hockey-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-soccer-t-shirt",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-soccer-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Soccer T Shirt",
+      "new": "Tri-Blend Sports Soccer T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-soccer-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-tennis-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Tennis T Shirt",
+      "new": "Tri-Blend Sports Tennis T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-tennis-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-track-and-field-t-shirt",
+      "field": "name",
+      "old": "Tri Blend Sports Track And Field T Shirt",
+      "new": "Tri-Blend Sports Track and Field T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "tri-blend-sports-track-and-field-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "trumbull-1-4-zip",
+      "field": "name",
+      "old": "Trumbull 1 4 Zip",
+      "new": "Trumbull 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "ua-gameday-double-knit-hood",
+      "field": "name",
+      "old": "Ua Gameday Double Knit Hood",
+      "new": "UA Gameday Double-Knit Hood",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "ua-mens-tech-l-s-2-0",
+      "field": "name",
+      "old": "Ua Mens Tech L S 2 0",
+      "new": "UA Men's Tech Long Sleeve 2.0",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "ua-mens-tech-l-s-2-0",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-aunt-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-bowl-t-shirt",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-bowl-t-shirt",
+      "field": "name",
+      "old": "Yale Bowl T Shirt",
+      "new": "Yale Bowl T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-bowl-t-shirt",
+      "field": "colors",
+      "old": "[\"ivory\", \"navy blue\"]",
+      "new": "[\"ivory\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-brother-crewneck",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-dad-crewneck",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-dad-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-dad-t-shirt",
+      "field": "name",
+      "old": "Yale Dad T Shirt",
+      "new": "Yale Dad T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-dad-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-diving-t-shirt",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-diving-t-shirt",
+      "field": "name",
+      "old": "Yale Diving T Shirt",
+      "new": "Yale Diving T-Shirt",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-diving-t-shirt",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-grandma-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-grandpa-crewneck",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-grandpa-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-law-school-1-4-zip",
+      "field": "name",
+      "old": "Yale Law School 1 4 Zip",
+      "new": "Yale Law School 1/4 Zip",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-mom-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-creqneck-field-hockey",
+      "field": "name",
+      "old": "Yale Sports Creqneck Field Hockey",
+      "new": "Yale Sports Crewneck Field Hockey",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-creqneck-field-hockey",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-crewneck-baseball",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-crewneck-golf",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-crewneck-volleyball",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-baseball",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-diving",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-golf",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-hockey",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-soccer",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-swimming",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-tennis",
+      "field": "garment_type",
+      "old": "hooded sweatshirt",
+      "new": "pullover hoodie",
+      "issue": "2 mislabeled type"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-hoodie-tennis",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-t-shirt-field-hockey",
+      "field": "garment_type",
+      "old": "short-sleeve T-shirt",
+      "new": "short-sleeve t-shirt",
+      "issue": "4 garment_type casing"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-t-shirt-field-hockey",
+      "field": "name",
+      "old": "Yale Sports T Shirt Field Hockey",
+      "new": "Yale Sports T-Shirt Field Hockey",
+      "issue": "3/6/7 display name"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-sports-t-shirt-field-hockey",
+      "field": "colors",
+      "old": "[\"heather gray\", \"navy blue\"]",
+      "new": "[\"heather gray\", \"navy\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "catalogue",
+      "key": "yale-uncle-hoodie",
+      "field": "colors",
+      "old": "[\"navy blue\", \"white\"]",
+      "new": "[\"navy\", \"white\"]",
+      "issue": "5 color synonyms"
+    },
+    {
+      "table": "chat_messages",
+      "key": 6,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    },
+    {
+      "table": "chat_messages",
+      "key": 8,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    },
+    {
+      "table": "chat_messages",
+      "key": 10,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    },
+    {
+      "table": "chat_messages",
+      "key": 12,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    },
+    {
+      "table": "chat_messages",
+      "key": 14,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    },
+    {
+      "table": "chat_messages",
+      "key": 22,
+      "field": "products_json",
+      "old": "[]",
+      "new": null,
+      "issue": "12 empty list"
+    }
+  ],
+  "owner_decisions": [
+    "yale-sports-hoodie-tennis keeps its database price ($45); only its garment_type label was corrected"
+  ]
+}

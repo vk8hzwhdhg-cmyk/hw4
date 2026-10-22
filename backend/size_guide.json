@@ -1,0 +1,25 @@
+{
+  "title": "Campus Customs size guide (sample)",
+  "note": "Sample guide for this class project, based on Port & Company blank garments (several of our products are printed on them). Garment measurements are in inches, laid flat. Brands vary (Champion, Under Armour, Brooks Brothers, District may fit differently). XS measurements are not published by the source.",
+  "fit_note": "All items are sold in adult sizes XS-XXL. Products are not labeled men's or women's except two items named \"Men's\" (Champion Men's Triumph Raglan Crew, UA Men's Tech Long Sleeve 2.0). Women may prefer one size down for a closer fit.",
+  "how_to_measure": "Lay your best-fitting shirt flat and measure straight across the chest 1 inch below the armholes (width), and from the top of the shoulder to the hem (length). Compare with the chart.",
+  "body_chest_inches": {"XS": null, "S": "35-37", "M": "38-40", "L": "41-43", "XL": "44-46", "XXL": "47-49"},
+  "charts": {
+    "tees": {
+      "label": "T-shirts (based on Port & Company PC54)",
+      "applies_to": ["T-Shirts"],
+      "columns": ["Width", "Length", "Sleeve"],
+      "sizes": {"XS": null, "S": [18, 28, 16.75], "M": [20, 29, 17.75], "L": [22, 30, 18.75], "XL": [24, 31, 20.75], "XXL": [26, 32, 21.75]}
+    },
+    "sweatshirts": {
+      "label": "Sweatshirts, hoodies, quarter-zips, long sleeves and jackets (based on Port & Company PC78 crewneck)",
+      "applies_to": ["Crewnecks", "Hoodies", "Quarter-Zips", "Long Sleeves", "Jackets & Fleece"],
+      "columns": ["Width", "Length", "Sleeve"],
+      "sizes": {"XS": null, "S": [20, 28, 34.12], "M": [22, 29, 35.12], "L": [24, 30, 36.12], "XL": [26, 31, 37.12], "XXL": [28, 32, 37.62]}
+    }
+  },
+  "sources": [
+    "https://merchloop.com/products/port-company-5-4-oz-100-cotton-t-shirt-15",
+    "https://merchloop.com/products/port-company-classic-crewneck-sweatshirt"
+  ]
+}

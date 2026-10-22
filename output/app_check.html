@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs: App Check (Problem 11)</title>
+  <style>
+    body { font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color: #1d1d1d; max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 4rem; line-height: 1.55; }
+    h1 { font-weight: 400; text-transform: uppercase; letter-spacing: .03em; margin: 0 0 .25rem; }
+    .meta { color: #5c5c5c; margin: 0 0 2rem; font-size: .92rem; }
+    h2 { font-size: 1.15rem; color: #00366b; border-top: 3px solid #00366b; padding-top: 1rem; margin: 2.5rem 0 .75rem; }
+    figure { margin: 0 0 1.25rem; }
+    img { width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; display: block; }
+    figcaption { font-size: .95rem; margin-top: .5rem; }
+    .result { display: inline-block; background: #e8f4ec; color: #1e7b34; font-weight: 700; font-size: .8rem; padding: .1rem .5rem; border-radius: 3px; margin-right: .35rem; }
+    table { border-collapse: collapse; width: 100%; font-size: .92rem; margin-top: .5rem; }
+    th, td { text-align: left; border-top: 1px solid #e2e2e2; padding: .4rem .5rem; }
+    th { background: #f6f6f6; }
+    code { background: #f4f4f4; padding: 0 .25rem; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>Campus Customs: App Check</h1>
+  <p class="meta">Problem 11 · Tested on the running site (React front end at <code>localhost:5174</code>, FastAPI + Pydantic AI agent at <code>localhost:8000</code>, model Sol 5.6 via Portkey) · Oct 22, 2026 · Logged out as a guest, desktop window 1100×760.</p>
+
+  <table>
+    <tr><th>#</th><th>Check</th><th>Result</th></tr>
+    <tr><td>1</td><td>Chat checks the inventory level of an item</td><td><span class="result">PASS</span></td></tr>
+    <tr><td>2</td><td>Dynamic search result cards appear after a question</td><td><span class="result">PASS</span></td></tr>
+    <tr><td>3</td><td>Problem 9 usability feature: "Ask Bulldog about this item" + page-aware quick questions</td><td><span class="result">PASS</span></td></tr>
+  </table>
+
+  <h2>Check 1: Chat checks the inventory level of an item</h2>
+  <figure>
+    <img src="app_check_images/01_chat_inventory_check.jpg" alt="Bulldog chat answering how many Champion Reverse Weave Hoodies are in stock in medium and whether XL is in stock">
+    <figcaption><span class="result">PASS</span>Asked "How many Champion Reverse Weave Hoodies do you have in medium? And is XL in stock?", Bulldog replied <strong>"We have 20… in medium. XL is sold out."</strong> This matches <code>campus_customs.db</code> exactly (M = 20, XL = 0). The server log shows the agent called <code>check_stock</code> for each size, so the answer came from the database, not from memory.</figcaption>
+  </figure>
+
+  <h2>Check 2: Dynamic search result cards appear after a question</h2>
+  <figure>
+    <img src="app_check_images/02a_dynamic_cards_with_chat.jpg" alt="Asking What hoodies do you have shows a Bulldog's picks grid of hoodie cards on the page and mini cards in the chat">
+    <figcaption><span class="result">PASS</span>After "What hoodies do you have?", the agent's structured answer turned into a <strong>"Bulldog's picks · Yale hoodies"</strong> grid of 12 product cards on the page, plus mini cards in the chat. The reply honestly notes there are 27 hoodies in total, which matches the catalogue.</figcaption>
+  </figure>
+  <figure>
+    <img src="app_check_images/02b_dynamic_cards_grid.jpg" alt="The same Bulldog's picks grid with the chat closed, showing image, name, short description and price on each card">
+    <figcaption>With the chat closed, each card shows an image, name, short description and price, all filled in from the database by the server. The prices match the database (Basic Hoodie Big Yale $68, Brooks Brothers Full-Zip $88, Champion Full-Zip Hood $88, Champion Reverse Weave Hoodie $68), and every card links to its product page.</figcaption>
+  </figure>
+
+  <h2>Check 3: Problem 9 usability feature, "Ask Bulldog about this item"</h2>
+  <figure>
+    <img src="app_check_images/03a_ask_bulldog_button.jpg" alt="Baseball Left Chest Crewneck product page with the Ask Bulldog about this item button">
+    <figcaption><span class="result">PASS</span>Every product page now has an <strong>"Ask Bulldog about this item"</strong> button (Problem 9, F1), shown here on the Baseball Left Chest Crewneck ($58.00, colors Navy and White).</figcaption>
+  </figure>
+  <figure>
+    <img src="app_check_images/03b_ask_bulldog_answer.jpg" alt="Chat opened from the button with item-specific quick questions; tapping What colors does this come in? gets the answer navy and white">
+    <figcaption>The button opened the chat with <strong>quick questions for this item</strong>. Tapping "What colors does this come in?" got <strong>"The Baseball Left Chest Crewneck comes in navy and white"</strong>, which matches the page, without typing the product name. The log shows the agent called <code>get_current_page</code>, so it knew which item the shopper was viewing.</figcaption>
+  </figure>
+</body>
+</html>
